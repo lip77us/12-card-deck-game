@@ -156,7 +156,7 @@ func high_scores_retreived(result, response_code, headers, body):
 #func read_from_db() -> void:
 # This is dead code.  Get rid of it once I have a git hub commit
 	#var http = HTTPRequest.new()
-#
+# some more comments.
 	#http.request_completed.connect(self._http_request_completed)
 	#add_child(http)
 	#

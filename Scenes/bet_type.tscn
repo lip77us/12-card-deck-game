@@ -1,0 +1,76 @@
+[gd_scene load_steps=18 format=3 uid="uid://oryyxcm4s3oc"]
+
+[ext_resource type="Script" path="res://Scripts/bet_type.gd" id="1_od24g"]
+[ext_resource type="Script" path="res://Scripts/normal_hands.gd" id="1_qjldx"]
+[ext_resource type="Script" path="res://Scripts/bet_types/above_dealer.gd" id="2_67mkl"]
+[ext_resource type="Script" path="res://Scripts/bet_types/below_dealer.gd" id="3_uebvg"]
+[ext_resource type="Script" path="res://Scripts/bet_types/below_dealer_3_spots.gd" id="4_psnx0"]
+[ext_resource type="Script" path="res://Scripts/bet_types/above_dealer_3_spots.gd" id="5_gel5r"]
+[ext_resource type="Script" path="res://Scripts/bet_types/equal_dealer.gd" id="6_h78i1"]
+[ext_resource type="Script" path="res://Scripts/bet_types/has_magic_on_turn.gd" id="7_i7mt5"]
+[ext_resource type="Script" path="res://Scripts/five_spot_script.gd" id="8_c2uqp"]
+[ext_resource type="Script" path="res://Scripts/bet_types/three_spots.gd" id="8_pr3f1"]
+[ext_resource type="Script" path="res://Scripts/hand_total.gd" id="9_hdw5w"]
+[ext_resource type="Script" path="res://Scripts/magic_hand_total.gd" id="10_o22s8"]
+[ext_resource type="Script" path="res://Scripts/normal_hand_low.gd" id="11_1pbpa"]
+[ext_resource type="Script" path="res://Scripts/get_specific_card.gd" id="11_kk2ma"]
+[ext_resource type="Script" path="res://Scripts/normal_hand_medium.gd" id="12_daap4"]
+[ext_resource type="Script" path="res://Scripts/normal_hand_high.gd" id="13_bwqej"]
+[ext_resource type="Script" path="res://Scripts/flip_bet_script.gd" id="15_hwjky"]
+
+[node name="allBetTypes" type="Node"]
+
+[node name="abstractBetTypes" type="Node2D" parent="."]
+
+[node name="normalHands" type="Node2D" parent="abstractBetTypes"]
+script = ExtResource("1_qjldx")
+
+[node name="betType" type="Node2D" parent="."]
+script = ExtResource("1_od24g")
+
+[node name="aboveDealer" type="Node2D" parent="betType"]
+script = ExtResource("2_67mkl")
+
+[node name="aboveDealer3Spots" type="Node2D" parent="betType"]
+script = ExtResource("5_gel5r")
+
+[node name="belowDealer" type="Node2D" parent="betType"]
+script = ExtResource("3_uebvg")
+
+[node name="belowDealer3Spots" type="Node2D" parent="betType"]
+script = ExtResource("4_psnx0")
+
+[node name="equalDealer" type="Node2D" parent="betType"]
+script = ExtResource("6_h78i1")
+
+[node name="hasMagicOnTurn" type="Node2D" parent="betType"]
+script = ExtResource("7_i7mt5")
+
+[node name="threeSpots" type="Node2D" parent="betType"]
+script = ExtResource("8_pr3f1")
+
+[node name="fiveSpots" type="Node2D" parent="betType"]
+script = ExtResource("8_c2uqp")
+
+[node name="handTotal" type="Node2D" parent="betType"]
+script = ExtResource("9_hdw5w")
+
+[node name="magicHandTotal" type="Node2D" parent="betType"]
+script = ExtResource("10_o22s8")
+
+[node name="normalHandLow" type="Node2D" parent="betType"]
+script = ExtResource("11_1pbpa")
+
+[node name="normalHandMedium" type="Node2D" parent="betType"]
+script = ExtResource("12_daap4")
+
+[node name="normalHandHigh" type="Node2D" parent="betType"]
+script = ExtResource("13_bwqej")
+
+[node name="getSpecificCard" type="Node2D" parent="betType"]
+script = ExtResource("11_kk2ma")
+
+[node name="flipBet" type="Node2D" parent="betType"]
+script = ExtResource("15_hwjky")
+
+[node name="Inactive" type="Node2D" parent="."]

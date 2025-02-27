@@ -1,0 +1,6 @@
+[gd_resource type="Theme" format=3 uid="uid://bi72x6hfw3rr8"]
+
+[resource]
+PopupMenu/font_sizes/font_separator_size = 40
+PopupMenu/font_sizes/font_size = 40
+PopupMenu/font_sizes/title_font_size = 40

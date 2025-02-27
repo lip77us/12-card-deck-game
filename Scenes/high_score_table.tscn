@@ -1,0 +1,83 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvod7noay1y43"]
+
+[ext_resource type="Script" path="res://Scripts/high_score_table.gd" id="1_nt4qm"]
+[ext_resource type="Theme" uid="uid://dqkxwvdxfoy0" path="res://Themes/bet_theme.tres" id="2_lm06c"]
+
+[node name="HighScoreTable" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_nt4qm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 678.0
+offset_bottom = 341.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_lm06c")
+text = "High Score Table"
+horizontal_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="1" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_lm06c")
+text = "Place"
+horizontal_alignment = 1
+
+[node name="2" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_lm06c")
+text = "Name"
+horizontal_alignment = 1
+
+[node name="3" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_lm06c")
+text = "Score"
+horizontal_alignment = 1
+
+[node name="4" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_lm06c")
+text = "Date"
+horizontal_alignment = 1
+
+[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.82
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/PanelContainer2"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer2/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_lm06c")
+
+[node name="PanelContainer3" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="Button" type="Button" parent="VBoxContainer/PanelContainer3"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 10
+theme = ExtResource("2_lm06c")
+text = "OK"
+
+[connection signal="pressed" from="VBoxContainer/PanelContainer3/Button" to="." method="_on_button_pressed"]

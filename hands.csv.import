@@ -1,0 +1,15 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://d037502d51va"
+valid=false
+
+[deps]
+
+source_file="res://hands.csv"
+
+[params]
+
+compress=true
+delimiter=0

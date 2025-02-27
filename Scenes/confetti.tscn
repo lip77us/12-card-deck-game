@@ -1,0 +1,98 @@
+[gd_scene load_steps=5 format=3 uid="uid://bs0sarwky62hd"]
+
+[ext_resource type="Script" path="res://Scripts/confetti.gd" id="1_aj1ie"]
+[ext_resource type="AudioStream" uid="uid://bqssla8g2hxsq" path="res://audio/fireworks-50524.mp3" id="2_bso1b"]
+
+[sub_resource type="Curve" id="Curve_q3q6g"]
+min_value = -200.0
+max_value = 200.0
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 1, Vector2(1, 0), 0.0, 0.0, 1, 0]
+point_count = 2
+metadata/_snap_enabled = true
+
+[sub_resource type="Curve" id="Curve_gmjro"]
+_data = [Vector2(0.077951, 0.13536), 0.0, 0.0, 0, 0, Vector2(0.97216, 0.344528), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Confetti" type="Node2D"]
+top_level = true
+z_index = 99
+position = Vector2(600, 600)
+scale = Vector2(4, 4)
+script = ExtResource("1_aj1ie")
+
+[node name="colors" type="Node" parent="."]
+
+[node name="yellow" type="CPUParticles2D" parent="colors"]
+position = Vector2(600, 600)
+scale = Vector2(8, 8)
+emitting = false
+amount = 100
+lifetime = 2.0
+explosiveness = 0.81
+randomness = 0.2
+local_coords = true
+direction = Vector2(0, -1)
+spread = 62.69
+gravity = Vector2(0, 200)
+initial_velocity_min = 159.02
+initial_velocity_max = 277.44
+angular_velocity_min = 140.0
+angular_velocity_max = 280.0
+linear_accel_min = 6.0
+linear_accel_max = 11.0
+radial_accel_curve = SubResource("Curve_q3q6g")
+scale_amount_max = 10.0
+scale_amount_curve = SubResource("Curve_gmjro")
+color = Color(0.86151, 0.860045, 0.240939, 1)
+
+[node name="blue" type="CPUParticles2D" parent="colors"]
+position = Vector2(600, 600)
+scale = Vector2(8, 8)
+emitting = false
+amount = 100
+lifetime = 2.0
+explosiveness = 0.81
+randomness = 0.2
+local_coords = true
+direction = Vector2(0, -1)
+spread = 62.69
+gravity = Vector2(0, 200)
+initial_velocity_min = 159.02
+initial_velocity_max = 277.44
+angular_velocity_min = 140.0
+angular_velocity_max = 280.0
+linear_accel_min = 6.0
+linear_accel_max = 11.0
+radial_accel_curve = SubResource("Curve_q3q6g")
+scale_amount_max = 10.0
+scale_amount_curve = SubResource("Curve_gmjro")
+color = Color(0.105882, 1, 0.843137, 1)
+
+[node name="red" type="CPUParticles2D" parent="colors"]
+position = Vector2(600, 600)
+scale = Vector2(8, 8)
+emitting = false
+amount = 100
+lifetime = 2.0
+explosiveness = 0.81
+randomness = 0.2
+local_coords = true
+direction = Vector2(0, -1)
+spread = 62.69
+gravity = Vector2(0, 200)
+initial_velocity_min = 159.02
+initial_velocity_max = 277.44
+angular_velocity_min = 140.0
+angular_velocity_max = 280.0
+linear_accel_min = 6.0
+linear_accel_max = 11.0
+radial_accel_curve = SubResource("Curve_q3q6g")
+scale_amount_max = 10.0
+scale_amount_curve = SubResource("Curve_gmjro")
+color = Color(0.943577, 0.212555, 0.444664, 1)
+
+[node name="audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_bso1b")
+volume_db = -11.459
+parameters/looping = true

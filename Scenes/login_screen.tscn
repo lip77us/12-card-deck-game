@@ -1,0 +1,130 @@
+[gd_scene load_steps=6 format=3 uid="uid://cuyu4mo1i0lf2"]
+
+[ext_resource type="Script" path="res://Scripts/login_screen.gd" id="1_hhtj2"]
+[ext_resource type="Texture2D" uid="uid://b46w7kb8s6hf4" path="res://Assets/casino.jpeg" id="2_jvbix"]
+
+[sub_resource type="Theme" id="Theme_wso31"]
+default_font_size = 20
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_6svl1"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7srjf"]
+
+[node name="LoginScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -140.0
+offset_right = -360.0
+offset_bottom = -140.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hhtj2")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -262.5
+offset_right = 300.0
+offset_bottom = 262.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+texture = ExtResource("2_jvbix")
+metadata/_edit_group_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -110.0
+offset_right = 110.0
+offset_bottom = 215.0
+grow_horizontal = 2
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="NinePatchRect/VBoxContainer"]
+title = "Name Lookup Error"
+position = Vector2i(1250, 1300)
+size = Vector2i(400, 90)
+theme = SubResource("Theme_wso31")
+
+[node name="TitleLabel" type="Label" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+text = "User Login"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+
+[node name="UserNameLabel" type="Label" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+text = "User Name:"
+
+[node name="UserNameLine" type="LineEdit" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="PassWordLabel" type="Label" parent="NinePatchRect/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Password(not really):"
+
+[node name="PassWordLine" type="LineEdit" parent="NinePatchRect/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+
+[node name="LoginButton" type="Button" parent="NinePatchRect/VBoxContainer"]
+material = SubResource("CanvasItemMaterial_6svl1")
+custom_minimum_size = Vector2(220, 55)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="LoginLabel" type="Label" parent="NinePatchRect/VBoxContainer/LoginButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Login"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+
+[node name="NewUserButton" type="Button" parent="NinePatchRect/VBoxContainer"]
+material = SubResource("CanvasItemMaterial_7srjf")
+custom_minimum_size = Vector2(220, 55)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="LoginLabel" type="Label" parent="NinePatchRect/VBoxContainer/NewUserButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "New User"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="NinePatchRect/VBoxContainer/LoginButton" to="." method="_on_login_button_pressed"]
+[connection signal="pressed" from="NinePatchRect/VBoxContainer/NewUserButton" to="." method="_on_new_user_button_pressed"]

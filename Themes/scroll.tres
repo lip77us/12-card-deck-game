@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dryr5dktacljm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bwij6"]
+border_width_right = 20
+border_width_bottom = 20
+
+[resource]
+ScrollContainer/styles/panel = SubResource("StyleBoxFlat_bwij6")

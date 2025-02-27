@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://7cc3ngokh0cc"]
+
+[ext_resource type="Script" path="res://Scripts/high_score_row.gd" id="1_ia5fg"]
+[ext_resource type="Theme" uid="uid://dqkxwvdxfoy0" path="res://Themes/bet_theme.tres" id="1_w6pg7"]
+
+[node name="high_score_row" type="HBoxContainer"]
+offset_right = 1132.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+theme = ExtResource("1_w6pg7")
+script = ExtResource("1_ia5fg")
+
+[node name="1" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Place"
+horizontal_alignment = 1
+
+[node name="2" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Name"
+horizontal_alignment = 1
+
+[node name="3" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Score"
+horizontal_alignment = 1
+
+[node name="4" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Date"
+horizontal_alignment = 1
